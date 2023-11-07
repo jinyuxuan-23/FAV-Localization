@@ -8,8 +8,7 @@ from parameters.param import *
 
 def video_init(video_file_path):
     cap = cv2.VideoCapture(video_file_path)
-    n_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) # Get frame count
-    # Get width and height of video stream
+    n_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
