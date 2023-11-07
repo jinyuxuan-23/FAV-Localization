@@ -60,7 +60,7 @@ def atti_calculate(atti_dict, time):
     longitude = cubic_interp(sorted_key, sorted_longitude, time)
 
     test_value = quaternion[0]*quaternion[2] - quaternion[1]*quaternion[3]
-    if test_value < -Threshold or test_value > Threshold:   #飞机奇异状态下的姿态角（theta=+-90°）
+    if test_value < -Threshold or test_value > Threshold: 
         if test_value > 0:
             test_value = 1
         elif test_value < 0:
