@@ -59,10 +59,10 @@ def Cal_GNSS_Position(input_info):
     L = flying_height / cos_Pe_z
     Pg = L*Pe
 
-    GNSS_pos = inverse_haversine((latitude, longitude), Pe[0]/1000, Direction.NORTH)   
-    GNSS_pos = inverse_haversine(GNSS_pos, Pe[1]/1000, Direction.EAST)
-    # GNSS_pos = geopy.distance.distance(kilometers=Pe[0]/1000).destination((latitude, longitude), bearing=0)  #bearing=0，North
-    # GNSS_pos = geopy.distance.distance(kilometers=Pe[1]/1000).destination((GNSS_pos[0], GNSS_pos[1]), bearing=90)  #bearing=90，East
+    GNSS_pos = inverse_haversine((latitude, longitude), Pg[0]/1000, Direction.NORTH)   
+    GNSS_pos = inverse_haversine(GNSS_pos, Pg[1]/1000, Direction.EAST)
+    # GNSS_pos = geopy.distance.distance(kilometers=Pg[0]/1000).destination((latitude, longitude), bearing=0)  #bearing=0，North
+    # GNSS_pos = geopy.distance.distance(kilometers=Pg[1]/1000).destination((GNSS_pos[0], GNSS_pos[1]), bearing=90)  #bearing=90，East
     result = (GNSS_pos[0], GNSS_pos[1])
     return Pg, result
 
